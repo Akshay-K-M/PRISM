@@ -1,0 +1,251 @@
+
+2026-09-04 12:15:38,622- Base Pipeline - INFO    : Sampling is disabled! 
+2026-09-04 12:15:38,623- 
+2026-09-04 12:15:38,623- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,623- View_Minimizer - DEBUG   : {'variable_assignments': 50} 
+2026-09-04 12:15:38,624- View_Minimizer - DEBUG   : (0,50) 
+2026-09-04 12:15:38,624- View_Minimizer - DEBUG   : (0,1) (0,50) 
+2026-09-04 12:15:38,624- View_Minimizer - DEBUG   : ..cur execute..create table unmasque.variable_assignments as select * from unmasque.variable_assignments_restore where ctid >= '(0,1)' and ctid <= '(0,50)';  
+2026-09-04 12:15:38,625- View_Minimizer - DEBUG   : ..cur execute..drop table if exists unmasque.variable_assignments_restore CASCADE; 
+2026-09-04 12:15:38,627- View_Minimizer - DEBUG   : select count(*) from unmasque.variable_assignments; 
+2026-09-04 12:15:38,627- View_Minimizer - DEBUG   : REMAINING TABLE SIZE 50 
+2026-09-04 12:15:38,628- View_Minimizer - DEBUG   : (0,1) (0,25) (0,26) (0,50) 
+
+[-- LOGS IF VIEW MINIMIZATION DELETED ---]
+
+
+2026-09-04 12:15:38,649- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,649- View_Minimizer - DEBUG   : ..cur execute..drop view if exists unmasque.variable_assignments cascade; 
+2026-09-04 12:15:38,650- View_Minimizer - DEBUG   : (0,2) (0,2) 
+2026-09-04 12:15:38,650- View_Minimizer - DEBUG   : ..cur execute..create table unmasque.variable_assignments as select * from unmasque.variable_assignments_unmasque_View_Minimizer where ctid >= '(0,2)' and ctid <= '(0,2)';  
+2026-09-04 12:15:38,651- View_Minimizer - DEBUG   : ..cur execute..drop table if exists unmasque.variable_assignments_unmasque_View_Minimizer CASCADE; 
+2026-09-04 12:15:38,651- View_Minimizer - DEBUG   : select count(*) from unmasque.variable_assignments; 
+2026-09-04 12:15:38,652- View_Minimizer - DEBUG   : REMAINING TABLE SIZE 1 
+2026-09-04 12:15:38,652- View_Minimizer - DEBUG   : [('x1', 1, 'x2', 0, 'x3', 1, 'x4', 1, 'x5', 0, 'x6', 0, 'x7', 1, 'x8', 0, 'x9', 1, 'x10', 0)] 
+
+2026-09-04 12:15:38,663- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var1_name='x1'; 
+2026-09-04 12:15:38,664- 
+2026-09-04 12:15:38,664- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,664- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var1_name='x1'; 
+2026-09-04 12:15:38,664- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var1_name='x1'; 
+2026-09-04 12:15:38,664- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var1_val=0; 
+2026-09-04 12:15:38,664- 
+2026-09-04 12:15:38,665- Zero_Result_Executable - DEBUG   : Exe time: 0.0010006427764892578 
+2026-09-04 12:15:38,665- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var1_val=1; 
+2026-09-04 12:15:38,665- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var1_val=1; 
+2026-09-04 12:15:38,665- 
+2026-09-04 12:15:38,665- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,665- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var1_val=1; 
+2026-09-04 12:15:38,666- 
+2026-09-04 12:15:38,666- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,666- 
+2026-09-04 12:15:38,666- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,666- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var1_val=1; 
+2026-09-04 12:15:38,667- 
+2026-09-04 12:15:38,667- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,667- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var2_name='x2'; 
+2026-09-04 12:15:38,668- 
+2026-09-04 12:15:38,668- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,668- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var2_name='x2'; 
+2026-09-04 12:15:38,668- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var2_name='x2'; 
+2026-09-04 12:15:38,668- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var2_val=0; 
+2026-09-04 12:15:38,668- 
+2026-09-04 12:15:38,668- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,668- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var2_val=0; 
+2026-09-04 12:15:38,668- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var2_val=1; 
+2026-09-04 12:15:38,668- 
+2026-09-04 12:15:38,669- Zero_Result_Executable - DEBUG   : Exe time: 0.0010540485382080078 
+2026-09-04 12:15:38,669- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var2_val=0; 
+2026-09-04 12:15:38,669- 
+2026-09-04 12:15:38,669- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,669- 
+2026-09-04 12:15:38,669- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,670- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var2_val=0; 
+2026-09-04 12:15:38,670- 
+2026-09-04 12:15:38,670- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,670- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var3_name='x3'; 
+2026-09-04 12:15:38,671- 
+2026-09-04 12:15:38,671- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,671- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var3_name='x3'; 
+2026-09-04 12:15:38,671- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var3_name='x3'; 
+2026-09-04 12:15:38,671- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var3_val=0; 
+2026-09-04 12:15:38,671- 
+2026-09-04 12:15:38,672- Zero_Result_Executable - DEBUG   : Exe time: 0.0009982585906982422 
+2026-09-04 12:15:38,672- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var3_val=1; 
+2026-09-04 12:15:38,672- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var3_val=1; 
+2026-09-04 12:15:38,672- 
+2026-09-04 12:15:38,672- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,672- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var3_val=1; 
+2026-09-04 12:15:38,673- 
+2026-09-04 12:15:38,673- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,673- 
+2026-09-04 12:15:38,673- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,673- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var3_val=1; 
+2026-09-04 12:15:38,673- 
+2026-09-04 12:15:38,674- Zero_Result_Executable - DEBUG   : Exe time: 0.0009999275207519531 
+2026-09-04 12:15:38,674- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var4_name='x4'; 
+2026-09-04 12:15:38,674- 
+2026-09-04 12:15:38,674- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,674- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var4_name='x4'; 
+2026-09-04 12:15:38,674- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var4_name='x4'; 
+2026-09-04 12:15:38,675- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var4_val=0; 
+2026-09-04 12:15:38,675- 
+2026-09-04 12:15:38,675- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,675- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var4_val=1; 
+2026-09-04 12:15:38,675- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var4_val=1; 
+2026-09-04 12:15:38,675- 
+2026-09-04 12:15:38,675- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,675- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var4_val=1; 
+2026-09-04 12:15:38,676- 
+2026-09-04 12:15:38,676- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,676- 
+2026-09-04 12:15:38,676- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,676- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var4_val=1; 
+2026-09-04 12:15:38,677- 
+2026-09-04 12:15:38,677- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,677- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var5_name='x5'; 
+2026-09-04 12:15:38,677- 
+2026-09-04 12:15:38,677- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,677- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var5_name='x5'; 
+2026-09-04 12:15:38,678- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var5_name='x5'; 
+2026-09-04 12:15:38,678- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var5_val=0; 
+2026-09-04 12:15:38,678- 
+2026-09-04 12:15:38,678- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,678- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var5_val=0; 
+2026-09-04 12:15:38,679- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var5_val=1; 
+2026-09-04 12:15:38,679- 
+2026-09-04 12:15:38,679- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,679- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var5_val=0; 
+2026-09-04 12:15:38,679- 
+2026-09-04 12:15:38,679- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,680- 
+2026-09-04 12:15:38,680- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,680- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var5_val=0; 
+2026-09-04 12:15:38,680- 
+2026-09-04 12:15:38,680- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,680- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var6_name='x6'; 
+2026-09-04 12:15:38,681- 
+2026-09-04 12:15:38,681- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,681- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var6_name='x6'; 
+2026-09-04 12:15:38,681- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var6_name='x6'; 
+2026-09-04 12:15:38,681- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var6_val=0; 
+2026-09-04 12:15:38,682- 
+2026-09-04 12:15:38,682- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,682- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var6_val=0; 
+2026-09-04 12:15:38,682- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var6_val=1; 
+2026-09-04 12:15:38,682- 
+2026-09-04 12:15:38,682- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,682- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var6_val=0; 
+2026-09-04 12:15:38,683- 
+2026-09-04 12:15:38,683- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,683- 
+2026-09-04 12:15:38,683- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,683- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var6_val=0; 
+2026-09-04 12:15:38,684- 
+2026-09-04 12:15:38,684- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,684- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var7_name='x7'; 
+2026-09-04 12:15:38,684- 
+2026-09-04 12:15:38,685- Zero_Result_Executable - DEBUG   : Exe time: 0.0009999275207519531 
+2026-09-04 12:15:38,685- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var7_name='x7'; 
+2026-09-04 12:15:38,685- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var7_name='x7'; 
+2026-09-04 12:15:38,685- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var7_val=0; 
+2026-09-04 12:15:38,685- 
+2026-09-04 12:15:38,685- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,685- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var7_val=1; 
+2026-09-04 12:15:38,686- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var7_val=1; 
+2026-09-04 12:15:38,686- 
+2026-09-04 12:15:38,686- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,686- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var7_val=1; 
+2026-09-04 12:15:38,686- 
+2026-09-04 12:15:38,686- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,687- 
+2026-09-04 12:15:38,687- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,687- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var7_val=1; 
+2026-09-04 12:15:38,687- 
+2026-09-04 12:15:38,687- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,688- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var8_name='x8'; 
+2026-09-04 12:15:38,688- 
+2026-09-04 12:15:38,688- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,688- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var8_name='x8'; 
+2026-09-04 12:15:38,688- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var8_name='x8'; 
+2026-09-04 12:15:38,689- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var8_val=0; 
+2026-09-04 12:15:38,689- 
+2026-09-04 12:15:38,689- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,689- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var8_val=0; 
+2026-09-04 12:15:38,689- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var8_val=1; 
+2026-09-04 12:15:38,689- 
+2026-09-04 12:15:38,689- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,690- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var8_val=0; 
+2026-09-04 12:15:38,690- 
+2026-09-04 12:15:38,690- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,690- 
+2026-09-04 12:15:38,690- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,690- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var8_val=0; 
+2026-09-04 12:15:38,691- 
+2026-09-04 12:15:38,691- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,691- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var9_name='x9'; 
+2026-09-04 12:15:38,691- 
+2026-09-04 12:15:38,692- Zero_Result_Executable - DEBUG   : Exe time: 0.0009999275207519531 
+2026-09-04 12:15:38,692- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var9_name='x9'; 
+2026-09-04 12:15:38,692- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var9_name='x9'; 
+2026-09-04 12:15:38,692- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var9_val=0; 
+2026-09-04 12:15:38,692- 
+2026-09-04 12:15:38,692- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,692- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var9_val=1; 
+2026-09-04 12:15:38,693- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var9_val=1; 
+2026-09-04 12:15:38,693- 
+2026-09-04 12:15:38,693- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,693- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var9_val=1; 
+2026-09-04 12:15:38,693- 
+2026-09-04 12:15:38,694- Zero_Result_Executable - DEBUG   : Exe time: 0.0009996891021728516 
+2026-09-04 12:15:38,694- 
+2026-09-04 12:15:38,694- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,694- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var9_val=1; 
+2026-09-04 12:15:38,694- 
+2026-09-04 12:15:38,695- Zero_Result_Executable - DEBUG   : Exe time: 0.0010035037994384766 
+2026-09-04 12:15:38,695- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var10_name='x10'; 
+2026-09-04 12:15:38,696- 
+2026-09-04 12:15:38,696- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,696- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var10_name='x10'; 
+2026-09-04 12:15:38,696- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var10_name='x10'; 
+2026-09-04 12:15:38,696- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var10_val=0; 
+2026-09-04 12:15:38,696- 
+2026-09-04 12:15:38,696- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,696- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var10_val=0; 
+2026-09-04 12:15:38,696- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var10_val=1; 
+2026-09-04 12:15:38,696- 
+2026-09-04 12:15:38,697- Zero_Result_Executable - DEBUG   : Exe time: 0.001117706298828125 
+2026-09-04 12:15:38,697- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var10_val=0; 
+2026-09-04 12:15:38,697- 
+2026-09-04 12:15:38,697- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,697- 
+2026-09-04 12:15:38,697- Zero_Result_Executable - DEBUG   : Exe time: 0.0 
+2026-09-04 12:15:38,697- Filter - DEBUG   : ..cur execute..UPDATE unmasque.variable_assignments  SET var10_val=0; 
+2026-09-04 12:15:38,697- Filter - DEBUG   : [('variable_assignments', 'var1_val', '>=', 1, 1), ('variable_assignments', 'var2_val', '<=', 0, 0), ('variable_assignments', 'var3_val', '>=', 1, 1), ('variable_assignments', 'var4_val', '>=', 1, 1), ('variable_assignments', 'var5_val', '<=', 0, 0), ('variable_assignments', 'var6_val', '<=', 0, 0), ('variable_assignments', 'var7_val', '>=', 1, 1), ('variable_assignments', 'var8_val', '<=', 0, 0), ('variable_assignments', 'var9_val', '>=', 1, 1), ('variable_assignments', 'var10_val', '<=', 0, 0)] 
+
+[ -- LOGS OF ALGEBRAIC PREDICATES REMOVED ---]
+
+2026-09-04 12:15:38,703- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var10_val', '=', 0, 0)]
+2026-09-04 12:15:38,776- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1)] 
+2026-09-04 12:15:38,776- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var1_val', '=', 1, 1)] 
+2026-09-04 12:15:38,854- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1), ('variable_assignments', 'var1_val', '=', 0, 0)]
+2026-09-04 12:15:38,854- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var2_val', '=', 0, 0)] 
+2026-09-04 12:15:38,854- Base Pipeline - DEBUG   : 
+2026-09-04 12:15:38,906- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1), ('variable_assignments', 'var1_val', '=', 0, 0), ('variable_assignments', 'var2_val', '=', 1, 1)] 
+2026-09-04 12:15:38,906- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var3_val', '=', 1, 1)]
+2026-09-04 12:15:38,984- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1), ('variable_assignments', 'var1_val', '=', 0, 0), ('variable_assignments', 'var2_val', '=', 1, 1), ('variable_assignments', 'var3_val', '=', 0, 0)] 
+2026-09-04 12:15:38,984- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var4_val', '=', 1, 1)]
+2026-09-04 12:15:39,062- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1), ('variable_assignments', 'var1_val', '=', 0, 0), ('variable_assignments', 'var2_val', '=', 1, 1), ('variable_assignments', 'var3_val', '=', 0, 0), ('variable_assignments', 'var4_val', '=', 0, 0)] 
+2026-09-04 12:15:39,062- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var5_val', '=', 0, 0)]
+2026-09-04 12:15:39,144- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1), ('variable_assignments', 'var1_val', '=', 0, 0), ('variable_assignments', 'var2_val', '=', 1, 1), ('variable_assignments', 'var3_val', '=', 0, 0), ('variable_assignments', 'var4_val', '=', 0, 0), ('variable_assignments', 'var5_val', '=', 1, 1)] 
+2026-09-04 12:15:39,144- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var6_val', '=', 0, 0)]
+2026-09-04 12:15:39,227- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1), ('variable_assignments', 'var1_val', '=', 0, 0), ('variable_assignments', 'var2_val', '=', 1, 1), ('variable_assignments', 'var3_val', '=', 0, 0), ('variable_assignments', 'var4_val', '=', 0, 0), ('variable_assignments', 'var5_val', '=', 1, 1), ('variable_assignments', 'var6_val', '=', 1, 1)] 
+2026-09-04 12:15:39,227- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var7_val', '=', 1, 1)]
+2026-09-04 12:15:39,313- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1), ('variable_assignments', 'var1_val', '=', 0, 0), ('variable_assignments', 'var2_val', '=', 1, 1), ('variable_assignments', 'var3_val', '=', 0, 0), ('variable_assignments', 'var4_val', '=', 0, 0), ('variable_assignments', 'var5_val', '=', 1, 1), ('variable_assignments', 'var6_val', '=', 1, 1), ('variable_assignments', 'var7_val', '=', 0, 0)] 
+2026-09-04 12:15:39,313- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var8_val', '=', 0, 0)]
+2026-09-04 12:15:39,389- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1), ('variable_assignments', 'var1_val', '=', 0, 0), ('variable_assignments', 'var2_val', '=', 1, 1), ('variable_assignments', 'var3_val', '=', 0, 0), ('variable_assignments', 'var4_val', '=', 0, 0), ('variable_assignments', 'var5_val', '=', 1, 1), ('variable_assignments', 'var6_val', '=', 1, 1), ('variable_assignments', 'var7_val', '=', 0, 0), ('variable_assignments', 'var8_val', '=', 1, 1)] 
+2026-09-04 12:15:39,389- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var9_val', '=', 1, 1)]
+2026-09-04 12:15:39,463- Base Pipeline - DEBUG   : new or predicates... [[('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var1_val', '=', 1, 1), ('variable_assignments', 'var2_val', '=', 0, 0), ('variable_assignments', 'var3_val', '=', 1, 1), ('variable_assignments', 'var4_val', '=', 1, 1), ('variable_assignments', 'var5_val', '=', 0, 0), ('variable_assignments', 'var6_val', '=', 0, 0), ('variable_assignments', 'var7_val', '=', 1, 1), ('variable_assignments', 'var8_val', '=', 0, 0), ('variable_assignments', 'var9_val', '=', 1, 1)]] [('variable_assignments', 'var10_val', '=', 1, 1), ('variable_assignments', 'var1_val', '=', 0, 0), ('variable_assignments', 'var2_val', '=', 1, 1), ('variable_assignments', 'var3_val', '=', 0, 0), ('variable_assignments', 'var4_val', '=', 0, 0), ('variable_assignments', 'var5_val', '=', 1, 1), ('variable_assignments', 'var6_val', '=', 1, 1), ('variable_assignments', 'var7_val', '=', 0, 0), ('variable_assignments', 'var8_val', '=', 1, 1), ('variable_assignments', 'var9_val', '=', 0, 0)] 
+2026-09-04 12:15:39,463- Base Pipeline - DEBUG   : Checking OR predicate of  [('variable_assignments', 'var10_val', '=', 0, 0), ('variable_assignments', 'var10_val', '=', 1, 1)] 
+2026-09-04 12:15:39,463- Base Pipeline - DEBUG   : var10_val != 0 and var10_val != 1 
+2026-09-04 12:15:39,464- Base Pipeline - DEBUG   : [('variable_assignments', 'var10_val != 0 and var10_val != 1')] 

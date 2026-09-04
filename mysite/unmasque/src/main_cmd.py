@@ -1185,6 +1185,132 @@ and o1.o_orderdate between date '1995-01-01' and date '1995-12-31'
 and o2.o1_orderdate between date '1995-01-01' and date '1995-12-31'
 group by c_address;""", False, True, False, False),
 
+                     TestQuery("Anantha-Q2", """SELECT *
+FROM variable_assignments
+WHERE 
+   (var1_val = 0 AND var2_val = 0 AND var3_val = 0 AND var4_val = 1 AND   var5_val = 1 AND var6_val = 0 AND var7_val = 0 AND var8_val = 0 AND var9_val = 0 AND var10_val = 0)
+OR (var1_val = 0 AND var2_val = 1 AND var3_val = 0 AND var4_val = 0 AND var5_val = 1 AND var6_val = 1 AND var7_val = 0 AND var8_val = 1 AND var9_val = 0 AND var10_val = 1)
+OR (var1_val = 1 AND var2_val = 0 AND var3_val = 1 AND var4_val = 1 AND var5_val = 0 AND var6_val = 0 AND var7_val = 1 AND var8_val = 0 AND var9_val = 1 AND var10_val = 0)
+OR (var1_val = 1 AND var2_val = 1 AND var3_val = 1 AND var4_val = 0 AND var5_val = 0 AND var6_val = 1 AND var7_val = 1 AND var8_val = 1 AND var9_val = 1 AND var10_val = 1)
+;""", False, False, False, False, True),
+
+                     TestQuery("Anantha-Q1", """SELECT *
+    FROM variable_assignments
+    WHERE 
+       WHERE
+  (
+    (var1_val = 0 AND var2_val = 0 AND var3_val = 0 AND var4_val = 1)
+    OR (var1_val = 0 AND var2_val = 0 AND var3_val = 1 AND var4_val = 0)
+    OR (var1_val = 0 AND var2_val = 1 AND var3_val = 0 AND var4_val = 0)
+    OR (var1_val = 0 AND var2_val = 1 AND var3_val = 1 AND var4_val = 1)
+    OR (var1_val = 1 AND var2_val = 0 AND var3_val = 0 AND var4_val = 0)
+    OR (var1_val = 1 AND var2_val = 0 AND var3_val = 1 AND var4_val = 1)
+    OR (var1_val = 1 AND var2_val = 1 AND var3_val = 0 AND var4_val = 1)
+    OR (var1_val = 1 AND var2_val = 1 AND var3_val = 1 AND var4_val = 0)
+  )
+
+  AND (
+    (var2_val = 0 AND var3_val = 0 AND var4_val = 0 AND var5_val = 0)
+    OR (var2_val = 0 AND var3_val = 0 AND var4_val = 1 AND var5_val = 1)
+    OR (var2_val = 0 AND var3_val = 1 AND var4_val = 0 AND var5_val = 1)
+    OR (var2_val = 0 AND var3_val = 1 AND var4_val = 1 AND var5_val = 0)
+    OR (var2_val = 1 AND var3_val = 0 AND var4_val = 0 AND var5_val = 1)
+    OR (var2_val = 1 AND var3_val = 0 AND var4_val = 1 AND var5_val = 0)
+    OR (var2_val = 1 AND var3_val = 1 AND var4_val = 0 AND var5_val = 0)
+    OR (var2_val = 1 AND var3_val = 1 AND var4_val = 1 AND var5_val = 1)
+  )
+
+  AND (
+    (var3_val = 0 AND var4_val = 0 AND var5_val = 0 AND var6_val = 0)
+    OR (var3_val = 0 AND var4_val = 0 AND var5_val = 1 AND var6_val = 1)
+    OR (var3_val = 0 AND var4_val = 1 AND var5_val = 0 AND var6_val = 1)
+    OR (var3_val = 0 AND var4_val = 1 AND var5_val = 1 AND var6_val = 0)
+    OR (var3_val = 1 AND var4_val = 0 AND var5_val = 0 AND var6_val = 1)
+    OR (var3_val = 1 AND var4_val = 0 AND var5_val = 1 AND var6_val = 0)
+    OR (var3_val = 1 AND var4_val = 1 AND var5_val = 0 AND var6_val = 0)
+    OR (var3_val = 1 AND var4_val = 1 AND var5_val = 1 AND var6_val = 1)
+  )
+
+  AND (
+    (var4_val = 0 AND var5_val = 0 AND var6_val = 0 AND var7_val = 0)
+    OR (var4_val = 0 AND var5_val = 0 AND var6_val = 1 AND var7_val = 1)
+    OR (var4_val = 0 AND var5_val = 1 AND var6_val = 0 AND var7_val = 1)
+    OR (var4_val = 0 AND var5_val = 1 AND var6_val = 1 AND var7_val = 0)
+    OR (var4_val = 1 AND var5_val = 0 AND var6_val = 0 AND var7_val = 1)
+    OR (var4_val = 1 AND var5_val = 0 AND var6_val = 1 AND var7_val = 0)
+    OR (var4_val = 1 AND var5_val = 1 AND var6_val = 0 AND var7_val = 0)
+    OR (var4_val = 1 AND var5_val = 1 AND var6_val = 1 AND var7_val = 1)
+  )
+
+  AND (
+    (var5_val = 0 AND var6_val = 0 AND var7_val = 0 AND var8_val = 1)
+    OR (var5_val = 0 AND var6_val = 0 AND var7_val = 1 AND var8_val = 0)
+    OR (var5_val = 0 AND var6_val = 1 AND var7_val = 0 AND var8_val = 0)
+    OR (var5_val = 0 AND var6_val = 1 AND var7_val = 1 AND var8_val = 1)
+    OR (var5_val = 1 AND var6_val = 0 AND var7_val = 0 AND var8_val = 0)
+    OR (var5_val = 1 AND var6_val = 0 AND var7_val = 1 AND var8_val = 1)
+    OR (var5_val = 1 AND var6_val = 1 AND var7_val = 0 AND var8_val = 1)
+    OR (var5_val = 1 AND var6_val = 1 AND var7_val = 1 AND var8_val = 0)
+  )
+
+  AND (
+    (var6_val = 0 AND var7_val = 0 AND var8_val = 0 AND var9_val = 0)
+    OR (var6_val = 0 AND var7_val = 0 AND var8_val = 1 AND var9_val = 1)
+    OR (var6_val = 0 AND var7_val = 1 AND var8_val = 0 AND var9_val = 1)
+    OR (var6_val = 0 AND var7_val = 1 AND var8_val = 1 AND var9_val = 0)
+    OR (var6_val = 1 AND var7_val = 0 AND var8_val = 0 AND var9_val = 1)
+    OR (var6_val = 1 AND var7_val = 0 AND var8_val = 1 AND var9_val = 0)
+    OR (var6_val = 1 AND var7_val = 1 AND var8_val = 0 AND var9_val = 0)
+    OR (var6_val = 1 AND var7_val = 1 AND var8_val = 1 AND var9_val = 1)
+  )
+
+  AND (
+    (var7_val = 0 AND var8_val = 0 AND var9_val = 0 AND var10_val = 0)
+    OR (var7_val = 0 AND var8_val = 0 AND var9_val = 1 AND var10_val = 1)
+    OR (var7_val = 0 AND var8_val = 1 AND var9_val = 0 AND var10_val = 1)
+    OR (var7_val = 0 AND var8_val = 1 AND var9_val = 1 AND var10_val = 0)
+    OR (var7_val = 1 AND var8_val = 0 AND var9_val = 0 AND var10_val = 1)
+    OR (var7_val = 1 AND var8_val = 0 AND var9_val = 1 AND var10_val = 0)
+    OR (var7_val = 1 AND var8_val = 1 AND var9_val = 0 AND var10_val = 0)
+    OR (var7_val = 1 AND var8_val = 1 AND var9_val = 1 AND var10_val = 1)
+  )
+
+  AND (
+    (var8_val = 0 AND var9_val = 0 AND var10_val = 0 AND var1_val = 0)
+    OR (var8_val = 0 AND var9_val = 0 AND var10_val = 1 AND var1_val = 1)
+    OR (var8_val = 0 AND var9_val = 1 AND var10_val = 0 AND var1_val = 1)
+    OR (var8_val = 0 AND var9_val = 1 AND var10_val = 1 AND var1_val = 0)
+    OR (var8_val = 1 AND var9_val = 0 AND var10_val = 0 AND var1_val = 1)
+    OR (var8_val = 1 AND var9_val = 0 AND var10_val = 1 AND var1_val = 0)
+    OR (var8_val = 1 AND var9_val = 1 AND var10_val = 0 AND var1_val = 0)
+    OR (var8_val = 1 AND var9_val = 1 AND var10_val = 1 AND var1_val = 1)
+  )
+
+
+  AND (
+    (var9_val = 0 AND var10_val = 0 AND var1_val = 0 AND var2_val = 0)
+    OR (var9_val = 0 AND var10_val = 0 AND var1_val = 1 AND var2_val = 1)
+    OR (var9_val = 0 AND var10_val = 1 AND var1_val = 0 AND var2_val = 1)
+    OR (var9_val = 0 AND var10_val = 1 AND var1_val = 1 AND var2_val = 0)
+    OR (var9_val = 1 AND var10_val = 0 AND var1_val = 0 AND var2_val = 1)
+    OR (var9_val = 1 AND var10_val = 0 AND var1_val = 1 AND var2_val = 0)
+    OR (var9_val = 1 AND var10_val = 1 AND var1_val = 0 AND var2_val = 0)
+    OR (var9_val = 1 AND var10_val = 1 AND var1_val = 1 AND var2_val = 1)
+  )
+
+
+  AND (
+    (var10_val = 0 AND var1_val = 0 AND var2_val = 0 AND var3_val = 0)
+    OR (var10_val = 0 AND var1_val = 0 AND var2_val = 1 AND var3_val = 1)
+    OR (var10_val = 0 AND var1_val = 1 AND var2_val = 0 AND var3_val = 1)
+    OR (var10_val = 0 AND var1_val = 1 AND var2_val = 1 AND var3_val = 0)
+    OR (var10_val = 1 AND var1_val = 0 AND var2_val = 0 AND var3_val = 1)
+    OR (var10_val = 1 AND var1_val = 0 AND var2_val = 1 AND var3_val = 0)
+    OR (var10_val = 1 AND var1_val = 1 AND var2_val = 0 AND var3_val = 0)
+    OR (var10_val = 1 AND var1_val = 1 AND var2_val = 1 AND var3_val = 1)
+  );""",
+                               False, False, False, False, True),
+
                      ]
     return test_workload
 
@@ -1199,7 +1325,7 @@ if __name__ == '__main__':
 
     # print(workload_dict)
 
-    qid = sys.argv[1]
+    qid = "Anantha-Q2" #sys.argv[1]
     hq = workload[workload_dict[qid]]
     query = hq.query
     conn = ConnectionHelperFactory().createConnectionHelper()

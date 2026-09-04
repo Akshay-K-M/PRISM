@@ -63,7 +63,8 @@ class QueryDetails:
 
     def assembleQuery(self):
         output = ""
-        output = append_clause(output, "Select", self.select_op)
+        #output = append_clause(output, "Select", self.select_op)
+        output = append_clause(output, "Select", "*")
         output = append_clause(output, "From", self.from_op)
         output = append_clause(output, "Where", self.where_op)
         output = append_clause(output, "Group By", self.group_by_op)
