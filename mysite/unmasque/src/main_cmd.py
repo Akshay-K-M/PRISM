@@ -29,10 +29,39 @@ class TestQuery:
         self.orf = orf if orf is not None else False
 
 def create_workload():
-    test_workload = [TestQuery("U1", """(SELECT p_partkey, p_name FROM part, partsupp where p_partkey = ps_partkey and ps_availqty > 100
-Order By p_partkey Limit 5)
-UNION ALL (SELECT s_suppkey, s_name FROM supplier, partsupp where s_suppkey = ps_suppkey and
-ps_availqty > 200 Order By s_suppkey Limit 7);""", True, True, False, False),
+    test_workload = [TestQuery("Buy", """SELECT * 
+FROM customer_buying_record
+WHERE 
+      (x1 = 1 OR y1 = 1)
+  AND (x2 = 1 OR y2 = 1)
+  AND (x3 = 1 OR y3 = 1)
+  AND (x4 = 1 OR y4 = 1)
+  AND (x5 = 1 OR y5 = 1)
+  AND (x6 = 1 OR y6 = 1)
+  AND (x7 = 1 OR y7 = 1)
+  AND (x8 = 1 OR y8 = 1)
+  AND (x9 = 1 OR y9 = 1)
+  AND (x10 = 1 OR y10 = 1)
+  AND (x11 = 1 OR y11 = 1)
+  AND (x12 = 1 OR y12 = 1)
+  AND (x13 = 1 OR y13 = 1)
+  AND (x14 = 1 OR y14 = 1)
+  AND (x15 = 1 OR y15 = 1)
+  AND (x16 = 1 OR y16 = 1)
+  AND (x17 = 1 OR y17 = 1)
+  AND (x18 = 1 OR y18 = 1)
+  AND (x19 = 1 OR y19 = 1)
+  AND (x20 = 1 OR y20 = 1)
+  AND (x21 = 1 OR y21 = 1)
+  AND (x22 = 1 OR y22 = 1)
+  AND (x23 = 1 OR y23 = 1)
+  AND (x24 = 1 OR y24 = 1)
+  AND (x25 = 1 OR y25 = 1)
+  AND (x26 = 1 OR y26 = 1)
+  AND (x27 = 1 OR y27 = 1)
+  AND (x28 = 1 OR y28 = 1)
+  AND (x29 = 1 OR y29 = 1)
+  AND (x30 = 1 OR y30 = 1);""", False, False, False, False, True),
                      TestQuery("U2", """(SELECT s_suppkey, s_name FROM supplier, nation where s_nationkey = n_nationkey and  n_name = 'GERMANY' order by s_suppkey desc, s_name limit 12)UNION ALL (SELECT c_custkey, c_name FROM customer,  orders where c_custkey = o_custkey and o_orderpriority = '1-URGENT' order by c_custkey, c_name desc limit 10);
 """, False, True, False, False),
                      TestQuery("U3", """(SELECT c_custkey as key, c_name as name FROM customer, nation where c_nationkey = n_nationkey and  n_name = 'UNITED STATES' Order by key Limit 10)
@@ -1197,7 +1226,6 @@ OR (var1_val = 1 AND var2_val = 1 AND var3_val = 1 AND var4_val = 0 AND var5_val
                      TestQuery("Anantha-Q1", """SELECT *
     FROM variable_assignments
     WHERE 
-       WHERE
   (
     (var1_val = 0 AND var2_val = 0 AND var3_val = 0 AND var4_val = 1)
     OR (var1_val = 0 AND var2_val = 0 AND var3_val = 1 AND var4_val = 0)
@@ -1325,7 +1353,7 @@ if __name__ == '__main__':
 
     # print(workload_dict)
 
-    qid = "Anantha-Q2" #sys.argv[1]
+    qid = ("Anantha-Q1") #sys.argv[1]
     hq = workload[workload_dict[qid]]
     query = hq.query
     conn = ConnectionHelperFactory().createConnectionHelper()

@@ -43,9 +43,12 @@ def beautify_scalar_func(final_res, local_symbol_list, deps):
         counter_dict[attrib] = attrib_count
     # Assuming counter_dict is already defined
     filtered_attribs = [attrib for attrib, count in counter_dict.items() if count > 1]
-    res_num_expr = simplify(res_expr)
-    res_expr = nsimplify(collect(res_num_expr, filtered_attribs))
+    res_expr = simplify(res_expr)
+    for attrib in filtered_attribs:
+        res_expr = collect( res_expr,attrib,distribute_order_term = False)
+    res_expr = nsimplify(res_expr)
     return res_expr
+
 
 
 class Projection(GenerationPipeLineBase):
