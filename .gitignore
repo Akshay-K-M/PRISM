@@ -1,1 +1,9 @@
 *.pyc
+*.pyc
+*.pyc
+*.pyc
+mysite/unmasque/src/__pycache__/main_cmd.cpython-38.pyc
+mysite/unmasque/src/core/__pycache__/initialization.cpython-38.pyc
+mysite/unmasque/src/core/abstract/__pycache__/ExtractorBase.cpython-38.pyc
+mysite/unmasque/src/util/__pycache__/configParser.cpython-38.pyc
+mysite/unmasque/src/util/__pycache__/constants.cpython-38.pyc

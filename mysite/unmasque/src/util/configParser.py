@@ -4,7 +4,7 @@ from pathlib import Path
 from .application_type import ApplicationType
 from .constants import DATABASE_SECTION, HOST, PORT, USER, PASSWORD, SCHEMA, DBNAME, \
     SUPPORT_SECTION, LEVEL, LOGGING_SECTION, FEATURE_SECTION, DETECT_UNION, DETECT_NEP, USE_CS2, DATABASE, DETECT_OR, \
-    DETECT_OJ, LIMIT, OPTIONS_SECTION, DOWN_SCALE, WORKING_SCHEMA, TABLE_SIZE_SECTION, TABLE, SCALE_FACTOR, SCALE_RETRY, \
+    DETECT_OJ, LIMIT, OPTIONS_SECTION, DOWN_SCALE, WORKING_SCHEMA, SCALE_FACTOR, SCALE_RETRY, \
     USE_INDEX
 
 
@@ -44,7 +44,6 @@ class Config:
         self.scale_down = False
         self.app_type = ApplicationType.SQL_ERR_FWD
         self.database = "postgres"
-        self.table_sizes_dict = {}
 
     def parse_config(self):
         if self.config_loaded:
@@ -62,16 +61,6 @@ class Config:
                 self.password = config_object.get(DATABASE_SECTION, PASSWORD)
                 self.dbname = config_object.get(DATABASE_SECTION, DBNAME)
                 self.user_schema = config_object.get(DATABASE_SECTION, SCHEMA)
-                i = 1
-                while True:
-                    try:
-                        table_size_entry = config_object.get(TABLE_SIZE_SECTION, TABLE + str(i))
-                        key, value = table_size_entry.split(":")
-                        self.table_sizes_dict[key.strip()] = int(value.strip())
-                        i = i + 1
-                    except Exception:
-                        break
-
                 self.pkfk = config_object.get(SUPPORT_SECTION, "pkfk")
                 # self.index_maker = config_object.get(SUPPORT_SECTION, "index_maker")
 

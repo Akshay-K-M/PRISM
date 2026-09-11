@@ -71,12 +71,7 @@ class Initiator(Base):
         return check
 
     def __get_rows_in_tables(self):
-        if not self.connectionHelper.config.table_sizes_dict.keys():
-            self.get_all_sizes()
-        else:
-            self.all_sizes = self.connectionHelper.config.table_sizes_dict.copy()
-            # for key, value in self.connectionHelper.config.table_sizes_dict:
-            #     self.all_sizes[key] = value
+        self.get_all_sizes()
         self.logger.debug(self.all_sizes)
 
     def __do_refinement(self):
