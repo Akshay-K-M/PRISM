@@ -27,10 +27,10 @@ EXTRACTOR_NAMES = {"Executable",
                    "Equi_Join",
                    "InequalityPredicate"}
 
-BOOLEAN_RELATED = {"Where_clause",
-                   "Filter",
-                   "Equi_Join",
-                   "InequalityPredicate"}
+BOOLEAN_RELATED = {"Extraction PipeLine",
+"Base Pipeline", "ExtractionPipeLine",
+"BasePipeLine", "DisjunctionPipeLine",
+"DisjunctionPipeLine PipeLine"}
 
 def get_format_args(msg, args):
     f_msg = format(str(msg))

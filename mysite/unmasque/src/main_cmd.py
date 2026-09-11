@@ -234,7 +234,7 @@ if __name__ == '__main__':
 
     # print(workload_dict)
 
-    qid = "Buy" #sys.argv[1]
+    qid = "Anantha-Q1" #sys.argv[1]
     hq = workload[workload_dict[qid]]
     query = hq.query
     conn = ConnectionHelperFactory().createConnectionHelper()
