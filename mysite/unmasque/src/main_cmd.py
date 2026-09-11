@@ -2,16 +2,14 @@ import signal
 import sys
 
 from .core.factory.PipeLineFactory import PipeLineFactory
-from .pipeline.abstract.TpchSanitizer import TpchSanitizer
+from .pipeline.abstract.SchemaSanitizer import SchemaSanitizer
 from .util.ConnectionFactory import ConnectionHelperFactory
-from .util.workload_queries import TestQuery
-
 
 def signal_handler(signum, frame):
     print('You pressed Ctrl+C!')
     sigconn = ConnectionHelperFactory().createConnectionHelper()
     sigconn.connectUsingParams()
-    sanitizer = TpchSanitizer(sigconn)
+    sanitizer = SchemaSanitizer(sigconn)
     sanitizer.sanitize()
     sigconn.closeConnection()
     print("database restored!")

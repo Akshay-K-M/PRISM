@@ -6,7 +6,7 @@ from ....src.core.abstract.abstractConnection import AbstractConnectionHelper
 from typing import List
 
 
-class TpchSanitizer:
+class SchemaSanitizer:
 
     def __init__(self, connectionHelper: AbstractConnectionHelper, all_sizes=None):
         if all_sizes is None:

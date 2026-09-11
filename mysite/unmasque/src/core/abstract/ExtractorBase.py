@@ -4,11 +4,11 @@ from abc import abstractmethod
 from ...util.error_handling import UnmasqueError
 from ...util.constants import OK
 from ....src.core.abstract.abstractConnection import AbstractConnectionHelper
-from ....src.pipeline.abstract.TpchSanitizer import TpchSanitizer
+from ....src.pipeline.abstract.SchemaSanitizer import SchemaSanitizer
 from ....src.util.Log import Log, BOOLEAN_RELATED, create_logger
 
 
-class Base(TpchSanitizer):
+class Base(SchemaSanitizer):
     _instance = None
     method_call_count = 0
 

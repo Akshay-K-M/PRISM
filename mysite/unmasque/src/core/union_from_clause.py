@@ -1,4 +1,4 @@
-from ..mocks.database import Schema
+from ..Logical.database import Schema
 from ...src.core.abstract.AppExtractorBase import AppExtractorBase
 from ...src.core.from_clause import FromClause
 
