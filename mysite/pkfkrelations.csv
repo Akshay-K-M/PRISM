@@ -1,2 +1,2 @@
 TABLE_NAME,ATTRIBUTE_NAME,IS_PK,IS_FK,REFERENCING_TABLE,REFERENCING_ATTRIBUTE
-variable_assignments,var1,N,N,,
+customer_buying_record,id,Y,N,,

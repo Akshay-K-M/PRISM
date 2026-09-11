@@ -5,7 +5,7 @@ from ...util.error_handling import UnmasqueError
 from ...util.constants import OK
 from ....src.core.abstract.abstractConnection import AbstractConnectionHelper
 from ....src.pipeline.abstract.TpchSanitizer import TpchSanitizer
-from ....src.util.Log import Log
+from ....src.util.Log import Log, BOOLEAN_RELATED, create_logger
 
 
 class Base(TpchSanitizer):
@@ -26,7 +26,7 @@ class Base(TpchSanitizer):
         self.local_elapsed_time = None
         self.done = False
         self.result = None
-        self.logger = Log(name, connectionHelper.config.log_level)
+        self.logger = create_logger(name, connectionHelper.config.log_level)
         self.error = None
 
     def doJob(self, *args):

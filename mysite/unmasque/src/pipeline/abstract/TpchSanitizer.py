@@ -1,6 +1,6 @@
 import copy
 
-from ...util.Log import Log
+from ...util.Log import Log, create_logger
 from ...util.constants import UNMASQUE
 from ....src.core.abstract.abstractConnection import AbstractConnectionHelper
 from typing import List
@@ -14,7 +14,7 @@ class TpchSanitizer:
         self.all_sizes = all_sizes
         self.all_relations = []
         self.connectionHelper = connectionHelper
-        self.logger = Log("TpchSanitizer", connectionHelper.config.log_level)
+        self.logger = create_logger("TpchSanitizer", connectionHelper.config.log_level)
 
     def remove_footprint(self):
         self.connectionHelper.execute_sql([f"Drop Schema if exists {self.connectionHelper.config.schema} cascade;"],

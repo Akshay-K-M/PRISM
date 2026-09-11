@@ -5,7 +5,7 @@ from abc import abstractmethod, ABC
 
 from ...core.elapsed_time import create_zero_time_profile
 from ...core.factory.ExecutableFactory import ExecutableFactory
-from ...util.Log import Log
+from ...util.Log import Log, create_logger
 from ...util.constants import WAITING, DONE, WRONG, RESULT_COMPARE, START, RUNNING, ERROR
 from ...util.error_handling import UnmasqueError
 from ...util.error_codes import ERROR_000
@@ -47,7 +47,7 @@ class GenericPipeLine(ABC):
         self.pipeline_name = name
         self.time_profile = create_zero_time_profile()
         self.token = None
-        self.logger = Log(name, connectionHelper.config.log_level)
+        self.logger =  create_logger(name, connectionHelper.config.log_level)
         self.correct = False
         self.all_sizes = {}
         self.error = ""
