@@ -133,7 +133,18 @@ class GenericPipeLine(ABC):
         rc = ResultComparator(self.connectionHelper, True, self.core_relations)
         rc.full_db_restore = True
         self.update_state(RESULT_COMPARE + RUNNING)
-        matched, restore_time = rc.doJob(query, result)
+        #matched, restore_time = rc.doJob(query, result)
+        comparison = rc.doJob(query, result)
+
+        if not isinstance(comparison, tuple) or len(comparison) != 2:
+            self.error = str(comparison)
+            self.logger.error(self.error)
+            self.update_state(ERROR)
+            self.connectionHelper.closeConnection()
+            return
+
+        matched, restore_time = comparison
+        
         self.time_profile.update_for_result_comparator(rc.local_elapsed_time - restore_time, rc.app_calls)
         self.time_profile.update_for_db_restore(restore_time, 0)
         if not matched:

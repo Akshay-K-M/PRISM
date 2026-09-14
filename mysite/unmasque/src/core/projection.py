@@ -39,7 +39,9 @@ def beautify_scalar_func(final_res, local_symbol_list, deps):
     attribs = [dep[1] for dep in deps]
     counter_dict = {}
     for attrib in attribs:
-        attrib_count = res_expr.count(attrib)
+        # attrib_count = res_expr.count(attrib)
+        qualified_attrib = f"{dep[0]}.{dep[1]}"
+        attrib_count = res_expr.count(symbols(qualified_attrib))
         counter_dict[attrib] = attrib_count
     # Assuming counter_dict is already defined
     filtered_attribs = [attrib for attrib, count in counter_dict.items() if count > 1]
@@ -128,7 +130,7 @@ class Projection(GenerationPipeLineBase):
         for i in range(len(projection_names)):
             if len(projection_dep[i]) == 1:
                 attrib_tup = projection_dep[i][0]
-                projected_attrib.append(attrib_tup[1])
+                projected_attrib.append(f"{attrib_tup[0]}.{attrib_tup[1]}")
             else:
                 if len(projection_dep[i]) == 0 and new_result[0][i] != CONST_1_VALUE:
                     # If no dependency is there and value is not 1 in result this means it is constant.
@@ -174,7 +176,8 @@ class Projection(GenerationPipeLineBase):
 
     def check_impact_of_single_attrib(self, attrib, new_result, projection_dep, query, tabname):
         for fe in self.global_filter_predicates:
-            if fe[1] == attrib and (fe[2] == 'equal' or fe[2] == '=') and fe[1] not in self.joined_attribs:
+            #if fe[1] == attrib and (fe[2] == 'equal' or fe[2] == '=') and (fe[1]) not in self.joined_attribs:
+            if fe[0] == tabname and fe[1] == attrib and (fe[2] == 'equal' or fe[2] == '=') and attrib not in self.joined_attribs:
                 return
         val, prev = self.update_attrib_to_see_impact(attrib, tabname)
         if val == prev:
@@ -269,7 +272,8 @@ class Projection(GenerationPipeLineBase):
             self.logger.debug("Another List", self.syms, idx)
         if n == 1 and self.attrib_types_dict[(dep[0][0], dep[0][1])] not in NUMBER_TYPES:
             self.param_list.append([dep[0][1]])
-            projected_attrib[idx] = dep[0][1]
+            #projected_attrib[idx] = dep[0][1]
+            projected_attrib[idx] = f"{dep[0][0]}.{dep[0][1]}"
             return [[1]]
 
         coeff = np.zeros((2 ** n, 2 ** n))

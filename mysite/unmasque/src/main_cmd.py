@@ -29,32 +29,31 @@ class TestQuery:
         self.orf = orf if orf is not None else False
 
 def create_workload():
-    test_workload = [TestQuery("Q1",  """SELECT n_name AS of_person,
-       t_title AS biography_movie
-FROM aka_name,
-     cast_info,
-     info_type,
-     link_type,
-     movie_link,
-     name,
-     person_info,
-     title
-WHERE an_name LIKE '%a%'
-  AND it_info ='mini biography'
-  AND lt_link ='features'
-  AND pi_note ='Volker Boehm'
-  AND t_production_year BETWEEN 1980 AND 1995
-  AND n_id = an_person_id
-  AND n_id = pi_person_id
-  AND ci_person_id = n_id
-  AND t_id = ci_movie_id
-  AND ml_linked_movie_id = t_id
-  AND lt_id = ml_link_type_id
-  AND it_id = pi_info_type_id
-AND pi_person_id = an_person_id
-  AND pi_person_id = ci_person_id
-  AND an_person_id = ci_person_id
-  AND ci_movie_id = ml_linked_movie_id;
+    test_workload = [TestQuery("Q1",  """SELECT cn.name AS producing_company,
+       miidx.info AS rating,
+       t.title AS movie
+FROM company_name AS cn,
+     company_type AS ct,
+     info_type AS it,
+     kind_type AS kt,
+     movie_companies AS mc,
+     movie_info AS mi,
+     movie_info_idx AS miidx,
+     title AS t
+WHERE cn.country_code = '[us]'
+  AND ct.kind = 'production companies'
+  AND it.info = 'rating'
+  AND kt.kind = 'movie'
+  AND mi.movie_id = t.id
+  AND kt.id = t.kind_id
+  AND mc.movie_id = t.id
+  AND cn.id = mc.company_id
+  AND ct.id = mc.company_type_id
+  AND miidx.movie_id = t.id
+  AND it.id = miidx.info_type_id
+  AND mi.movie_id = miidx.movie_id
+  AND mi.movie_id = mc.movie_id
+  AND miidx.movie_id = mc.movie_id;
     """, False, False, False, False),
  ]
     return test_workload
